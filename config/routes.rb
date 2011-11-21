@@ -2,8 +2,9 @@ Portfolio::Application.routes.draw do
   devise_for :users
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new"
+    get "sign_out", :to => "devise/sessions#destroy"
     get "sign_up", :to => "devise/registrations#new"
-    get "forgot_password", :to => "devise/passwords#new"
+    get "forgot_password", :to => "devise/passwords#new"	
   end
 
   root :to => 'static#index'
