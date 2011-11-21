@@ -1,7 +1,12 @@
 Portfolio::Application.routes.draw do
+  devise_for :users
+  devise_scope :user do
+    get "sign_in", :to => "devise/sessions#new"
+    get "sign_up", :to => "devise/registrations#new"
+    get "forgot_password", :to => "devise/passwords#new"
+  end
 
   root :to => 'static#index'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
