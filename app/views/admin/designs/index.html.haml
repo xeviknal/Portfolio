@@ -1,0 +1,23 @@
+%h1 Listing designs
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Image
+    %th
+    %th
+    %th
+
+  - @designs.each do |design|
+    %tr
+      %td= design.title
+      %td= design.description
+      %td= design.image
+      %td= link_to 'Show', admin_design_path(design)
+      %td= link_to 'Edit', edit_admin_design_path(design)
+      %td= link_to 'Destroy', admin_design_path(design), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Design', new_admin_design_path

@@ -1,0 +1,19 @@
+= form_for [:admin, @design] do |f|
+  -if @design.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@design.errors.count, "error")} prohibited this design from being saved:"
+      %ul
+        - @design.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :image
+    = f.text_field :image
+  .actions
+    = f.submit 'Save'

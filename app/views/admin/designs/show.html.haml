@@ -1,4 +1,15 @@
-#main
-  %h1= @design.title
-  %p= @design.description
+%p#notice= notice
 
+%p
+  %b Title:
+  = @design.title
+%p
+  %b Description:
+  = @design.description
+%p
+  %b Image:
+  = @design.image
+
+= link_to 'Edit', edit_admin_design_path(@design)
+\|
+= link_to 'Back', admin_designs_path
