@@ -9,5 +9,7 @@ Portfolio::Application.routes.draw do
   end
 
   root :to => 'static#index'
-  resources :designs
+  namespace :admin do
+    resources :designs
+  end
 end
