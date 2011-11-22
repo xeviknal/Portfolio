@@ -9,5 +9,5 @@ Portfolio::Application.routes.draw do
   end
 
   root :to => 'static#index'
-  resources :jobs
+  resources :designs
 end
