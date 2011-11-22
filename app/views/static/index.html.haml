@@ -1,4 +1,9 @@
 #welcome
   %h1 Itnig's Portfolio
   %p Welcome to our Portfolio, your portfolio
-
+  #designs
+    - @designs.each do |d|
+      #design
+        %h2=d.title
+        %p=d.description
+        %p=d.image
