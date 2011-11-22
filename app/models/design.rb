@@ -1,3 +1,4 @@
 class Design < ActiveRecord::Base
-    validates_presence_of :title, :description, :image
+  mount_uploader :image, PictureUploader
+  validates_presence_of :title, :description, :image
 end

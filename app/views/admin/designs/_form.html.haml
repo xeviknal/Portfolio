@@ -1,4 +1,4 @@
-= form_for [:admin, @design] do |f|
+= form_for [:admin, @design], :html => {:multipart => true} do |f|
   -if @design.errors.any?
     #error_explanation
       %h2= "#{pluralize(@design.errors.count, "error")} prohibited this design from being saved:"
@@ -14,6 +14,6 @@
     = f.text_area :description
   .field
     = f.label :image
-    = f.text_field :image
+    = f.file_field :image
   .actions
     = f.submit 'Save'
