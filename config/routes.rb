@@ -8,7 +8,10 @@ Portfolio::Application.routes.draw do
     get "forgot_password", :to => "devise/passwords#new", :as => :new_user_password
   end
 
-  root :to => 'static#index'
+  root :to => 'designs#index'
+
+  resources :designs, :only => [:index, :show], :path => '/'
+
   namespace :admin do
     resources :designs
   end

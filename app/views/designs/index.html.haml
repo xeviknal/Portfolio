@@ -4,6 +4,7 @@
   #designs
     - @designs.each do |d|
       #design
-        %h2=d.title
-        %p=d.description
-        =image_tag d.image_url(:thumb)
+        %h2= d.title
+        %p= d.description
+        = image_tag d.image_url(:thumb)
+        = link_to 'Show more', d

@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @design.title
+%p
+  %b Description:
+  = @design.description
+%p
+  %b Image:
+  = image_tag @design.image
+
+= link_to 'Back', designs_path
