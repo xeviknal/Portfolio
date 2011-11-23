@@ -27,11 +27,14 @@ class Admin::DesignsController < Admin::AdminController
 
   def update
     @design = Design.find(params[:id])
-    
-    if @design.update_attributes(params[:design])
-      redirect_to admin_design_path(@design), notice: 'Design was successfully updated'
-    else
-      render action: "edit"
+    respond_to do |format|
+      if @design.update_attributes(params[:design])
+        format.html { redirect_to admin_design_path(@design), notice: 'Design was successfully updated' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render :json => @user.errors.full_messages, :status => :unprocessable_entity }
+      end
     end
   end
 

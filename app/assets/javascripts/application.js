@@ -7,4 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require facebox
+//= require jquery.purr
+//= require best_in_place
 //= require application-end

@@ -32,6 +32,9 @@ GEM
     ansi (1.4.1)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
+    best_in_place (1.0.2)
+      jquery-rails
+      rails (~> 3.1.0)
     builder (3.0.0)
     carrierwave (0.5.8)
       activesupport (~> 3.0)
@@ -128,6 +131,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  best_in_place
   carrierwave
   coffee-rails (~> 3.1.1)
   devise

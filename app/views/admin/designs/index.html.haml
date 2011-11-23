@@ -11,8 +11,8 @@
 
   - @designs.each do |design|
     %tr
-      %td= design.title
-      %td= design.description
+      %td= best_in_place design, :title, :type => :input, :path => admin_design_path(design)
+      %td= best_in_place design, :description, :type => :textarea, :path => admin_design_path(design)
       %td= design.image
       %td= link_to 'Show', admin_design_path(design)
       %td= link_to 'Edit', edit_admin_design_path(design)
