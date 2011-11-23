@@ -1,7 +1,7 @@
 class Admin::DesignsController < Admin::AdminController
 
   def index
-    @designs = Design.all
+    @designs = Design.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
