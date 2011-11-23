@@ -15,7 +15,7 @@
     %tr
       %td= best_in_place design, :title, :type => :input, :path => admin_design_path(design)
       %td= best_in_place design, :description, :type => :textarea, :path => admin_design_path(design)
-      %td= design.image
+      %td= image_tag design.image_url(:thumb)
       %td= link_to 'Show', admin_design_path(design)
       %td= link_to 'Edit', edit_admin_design_path(design)
       %td= link_to 'Destroy', admin_design_path(design), :confirm => 'Are you sure?', :method => :delete
