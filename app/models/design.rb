@@ -4,4 +4,8 @@ class Design < ActiveRecord::Base
 
   #per_page constant for will_paginate gem
   self.per_page = 10
+
+  def disqus_identificator
+    "#{Digest::MD5.hexdigest id.to_s}"
+  end
 end

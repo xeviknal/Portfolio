@@ -10,4 +10,19 @@
   %b Image:
   = image_tag @design.image
 
+#disqus_thread
+
 = link_to 'Back', designs_path
+
+- content_for :custom_js do
+  :javascript
+    var disqus_shortname = 'disqusdesigns'; // required: replace example with your forum shortname
+    var disqus_url = '#{design_url(@design)}';
+    var disqus_developer = 1;
+    var disqus_identifier =  '#{@design.disqus_identificator}';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
