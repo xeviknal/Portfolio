@@ -33,7 +33,7 @@ class Admin::DesignsController < Admin::AdminController
         format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render :json => @user.errors.full_messages, :status => :unprocessable_entity }
+        format.json { render :json => @design.errors.full_messages, :status => :unprocessable_entity }
       end
     end
   end
