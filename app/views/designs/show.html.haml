@@ -10,6 +10,7 @@
   %b Image:
   = image_tag @design.image
 
+%fb:like{:href => "www.google.com", :layout => "button_count", :show_faces => "true"}
 #disqus_thread
 
 = link_to 'Back', designs_path
@@ -26,3 +27,10 @@
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/#{get_fb_locale(I18n.locale)}/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
