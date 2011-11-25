@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/albertbellonch/fb-localizer.git
+  revision: d1fc967a622249422ce1fe9fcbb78d27641a0628
+  specs:
+    fb-localizer (0.2.0)
+      i18n
+      libxml-ruby
+      rails
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -52,10 +61,6 @@ GEM
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
-    fb-localizer (0.2.0)
-      i18n
-      libxml-ruby
-      rails
     haml (3.1.3)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -141,7 +146,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.1.1)
   devise
-  fb-localizer
+  fb-localizer!
   haml-rails
   jquery-rails
   mini_magick
