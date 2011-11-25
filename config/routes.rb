@@ -1,6 +1,10 @@
 Portfolio::Application.routes.draw do
   root :to => redirect("/en")
 
+  namespace :admin do
+    resources :designs
+  end
+
   scope "/:locale" do
     devise_for :users , :controllers => {:sessions => 'custom_devise/sessions'}, :skip => [:sessions] do
       get "sign_in", :to => "devise/sessions#new", :as => :new_user_session
@@ -13,9 +17,5 @@ Portfolio::Application.routes.draw do
 
     root :to => 'designs#index'
     resources :designs, :only => [:index, :show], :path => '/'
-  end
-
-  namespace :admin do
-    resources :designs
   end
 end
