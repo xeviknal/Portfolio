@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ca:
+  back: "Tornar enrere"
+
+  designs:
+    show:
+      title: "Títol"
+      description: "Descripció"
+    index:
+      section_title: "Portfoli d'Itnig"
+
+      section_description: "Benvingut al nostre Portfolio, el teu Portfolio"
+      show_more: "Veure més"

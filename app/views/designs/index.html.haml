@@ -1,6 +1,6 @@
 #welcome
-  %h1 Itnig's Portfolio
-  %p Welcome to our Portfolio, your portfolio
+  %h1= t(".section_title")
+  %p= t(".section_description")
   #designs
     - @designs.each do |d|
       #design
@@ -8,4 +8,4 @@
         %p= d.description
         = link_to d.image_url, :rel => 'facebox' do
           = image_tag d.image_url(:thumb) 
-        = link_to 'Show more', d
+        = link_to t(".show_more"), d

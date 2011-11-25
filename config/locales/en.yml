@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  back: "Go back"
+
+  designs:
+    show:
+      title: "Title"
+      description: "Description"
+    index:
+      section_title: "Itnig's Portfolio"
+
+      section_description: "Welcome to our Portfolio, your portfolio"
+      show_more: "Show more"

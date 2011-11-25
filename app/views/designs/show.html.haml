@@ -1,16 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Title:
+  %b= t(".title") 
   = @design.title
 %p
-  %b Description:
+  %b= t(".description")
   = @design.description
 %p
-  %b Image:
   = image_tag @design.image
 
-%fb:like{:href => "www.google.com", :layout => "button_count", :show_faces => "true"}
+%fb:like{:href => "http://google.com", :layout => "button_count", :show_faces => "true"}
 #disqus_thread
 
 = link_to 'Back', designs_path
