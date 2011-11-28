@@ -1,4 +1,4 @@
-class Admin::AdminController < GenericController
+class Admin::AdminController < ApplicationController
   before_filter :require_auth
 
   def default_url_options(options={})
