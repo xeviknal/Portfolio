@@ -10,6 +10,7 @@ class Admin::DesignsController < Admin::AdminController
 
   def new
     @design = Design.new
+    @design.images.build
   end
 
   def edit
