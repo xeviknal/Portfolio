@@ -11,15 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123102950) do
+ActiveRecord::Schema.define(:version => 20111126120635) do
 
   create_table "designs", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", :force => true do |t|
+    t.string   "image"
+    t.text     "description"
+    t.integer  "sort_by"
+    t.integer  "design_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["design_id"], :name => "index_images_on_design_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
