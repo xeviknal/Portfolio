@@ -6,8 +6,12 @@
 %p
   %b= t(".description")
   = @design.description
-%p
-  = image_tag @design.image
+
+- @design.images.order(:sort_by).each do |img|
+  = image_tag img.image
+  %p= img.description
+
+%br
 
 %fb:like{:href => "http://google.com", :layout => "button_count", :show_faces => "true"}
 #disqus_thread

@@ -7,8 +7,10 @@
   %b Description:
   = @design.description
 %p
-  %b Image:
-  = @design.image
+  %b Images:
+- @design.images.order(:sort_by).each do |img|
+  = image_tag img.image
+  %p= img.description
 
 = link_to 'Edit', edit_admin_design_path(@design)
 \|

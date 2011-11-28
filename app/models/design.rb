@@ -8,4 +8,8 @@ class Design < ActiveRecord::Base
   def disqus_identificator
     "#{Digest::MD5.hexdigest id.to_s}"
   end
+
+  def splash
+    self.images.order(:sort_by).first
+  end
 end

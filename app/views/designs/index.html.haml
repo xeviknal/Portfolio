@@ -6,6 +6,6 @@
       #design
         %h2= d.title
         %p= d.description
-        = link_to d.image_url, :rel => 'facebox' do
-          = image_tag d.image_url(:thumb) 
+        = link_to d.splash.image_url, :rel => 'facebox' do
+          = image_tag d.splash.image_url(:thumb) 
         = link_to t(".show_more"), d
