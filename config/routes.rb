@@ -3,6 +3,7 @@ Portfolio::Application.routes.draw do
 
   namespace :admin do
     resources :designs
+      resources :images
   end
 
   scope "/:locale" do

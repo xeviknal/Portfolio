@@ -1,6 +1,6 @@
 class Design < ActiveRecord::Base
-  mount_uploader :image, PictureUploader
-  validates_presence_of :title, :description, :image
+  has_many :images
+  validates_presence_of :title, :description
 
   #per_page constant for will_paginate gem
   self.per_page = 10
