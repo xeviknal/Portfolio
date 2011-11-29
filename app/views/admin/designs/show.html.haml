@@ -1,16 +1,14 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @design.title
-%p
-  %b Description:
-  = @design.description
-%p
-  %b Images:
+%h2= @design.title
+%p= @design.description
+
 - @design.images.order(:sort_by).each do |img|
-  = image_tag img.image
-  %p= img.description
+  #image
+    = image_tag img.image
+    %p= img.description
+
+.clear
 
 = link_to 'Edit', edit_admin_design_path(@design)
 \|

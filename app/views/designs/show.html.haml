@@ -1,17 +1,14 @@
 %p#notice= notice
 
-%p
-  %b= t(".title") 
-  = @design.title
-%p
-  %b= t(".description")
-  = @design.description
+%h2= @design.title
+%p= @design.description
 
 - @design.images.order(:sort_by).each do |img|
-  = image_tag img.image
-  %p= img.description
+  #image
+    = image_tag img.image
+    %p= img.description
 
-%br
+.clear
 
 %fb:like{:href => "http://google.com", :layout => "button_count", :show_faces => "true"}
 #disqus_thread
