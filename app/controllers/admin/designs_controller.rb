@@ -15,6 +15,7 @@ class Admin::DesignsController < Admin::AdminController
 
   def edit
     @design = Design.find(params[:id])
+    @design.images.build
   end
 
   def create

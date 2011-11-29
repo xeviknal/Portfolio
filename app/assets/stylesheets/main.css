@@ -7,3 +7,7 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;  
 }
+
+#new_image {
+  display: none;
+}

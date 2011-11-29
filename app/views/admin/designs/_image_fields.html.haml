@@ -1,10 +1,12 @@
-%p
+.image{:id => f.object.new_record? && "new_image" }
   .field
     = f.label :image
-    = f.file_field :image
+    = f.file_field :image, :disabled => f.object.new_record? && true
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_area :description, :disabled => f.object.new_record? && true
   .field
     = f.label :sort_by
-    = f.text_field :sort_by
+    = f.text_field :sort_by, :disabled => f.object.new_record? && true
+  .field
+    = link_to_remove_fields "remove", f
