@@ -2,6 +2,7 @@
   %h1= t(".section_title")
   %p= t(".section_description")
   #designs
+    =will_paginate @designs
     - @designs.each do |d|
       #design
         %h2= d.title

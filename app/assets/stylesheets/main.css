@@ -5,7 +5,16 @@ ul.hmenu {
 }
 
 ul.hmenu li {
-  display: inline;  
+  display: inline;
+}
+
+#design {
+  float: left;
+  padding: 10px 70px;
+}
+
+#design a {
+  display: block;
 }
 
 #new_image {
