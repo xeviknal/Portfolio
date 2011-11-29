@@ -3,7 +3,7 @@ Portfolio::Application.routes.draw do
 
   namespace :admin do
     resources :designs, :except => :edit do
-      resources :images
+      resources :images, :only => :update
     end
   end
 

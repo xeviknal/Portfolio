@@ -8,5 +8,7 @@
 //= require jquery_ujs
 //= require facebox
 //= require jquery.purr
+//= require jquery.form.js
 //= require best_in_place
 //= require application-end
+//= require designs
