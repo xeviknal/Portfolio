@@ -12,12 +12,12 @@ ul.hmenu li {
   display: inline;
 }
 
-#design {
+.design {
   float: left;
-  padding: 10px 70px;
+  padding: 10px 60px;
 }
 
-#design a {
+.design a {
   display: block;
 }
 
