@@ -5,7 +5,7 @@ class Design < ActiveRecord::Base
   accepts_nested_attributes_for :images, :allow_destroy => true
 
   #per_page constant for will_paginate gem
-  self.per_page = 10
+  self.per_page = 8
 
   def has_images?
     self.errors.add :base, "At least you must create one image" if self.images.blank?
