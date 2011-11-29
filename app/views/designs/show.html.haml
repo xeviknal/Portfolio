@@ -3,7 +3,7 @@
 %h2= @design.title
 %p= @design.description
 
-- @design.images.order(:sort_by).each do |img|
+- @design.images.sorted.each do |img|
   #image
     = image_tag img.image
     %p= img.description

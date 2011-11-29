@@ -16,6 +16,6 @@ class Design < ActiveRecord::Base
   end
 
   def splash
-    self.images.order(:sort_by).first
+    self.images.sorted.first
   end
 end
