@@ -1,5 +1,6 @@
 %h1 Listing designs
 
+= link_to 'New Design', new_admin_design_path
 =will_paginate @designs
 
 %table
@@ -10,16 +11,10 @@
     %th
     %th
     %th
-
   - @designs.each do |design|
     %tr
       %td= best_in_place design, :title, :type => :input, :path => admin_design_path(design)
       %td= best_in_place design, :description, :type => :textarea, :path => admin_design_path(design)
       %td= image_tag design.splash.image_url(:thumb)
       %td= link_to 'Show', admin_design_path(design)
-      %td= link_to 'Edit', edit_admin_design_path(design)
       %td= link_to 'Destroy', admin_design_path(design), :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Design', new_admin_design_path

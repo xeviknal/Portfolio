@@ -2,8 +2,9 @@ Portfolio::Application.routes.draw do
   root :to => redirect("/en")
 
   namespace :admin do
-    resources :designs
+    resources :designs, :except => :edit do
       resources :images
+    end
   end
 
   scope "/:locale" do

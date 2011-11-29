@@ -13,11 +13,6 @@ class Admin::DesignsController < Admin::AdminController
     @design.images.build
   end
 
-  def edit
-    @design = Design.find(params[:id])
-    @design.images.build
-  end
-
   def create
     @design = Design.new(params[:design])
     if @design.save
