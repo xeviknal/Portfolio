@@ -3,13 +3,24 @@
 %h2= best_in_place @design, :title, :path => admin_design_path(@design)
 %p= best_in_place @design, :description, :path => admin_design_path(@design)
 
+=link_to "Add new image", "#new_image_form", :rel => 'facebox'
+%br
 - @design.images.order(:sort_by).each do |img|
   .image_design
     = link_to img.image_url, :rel => 'facebox' do
       = image_tag img.image_url(:thumb)
     %p= best_in_place img, :description, :path => admin_design_path(@design)
     = simple_form_for [:admin, @design, img ], :html => {:multipart => true}, :format => :json do |f|
-      = f.input :image, :as => :file, :label_html => {:class => "#{img.id}"}
+      = f.input :image, :as => :file
+    = link_to "remove", [:admin, img], :remote => true, :method => :delete
+
+#new_image_form.image_design{:style => "display:none"}
+  = simple_form_for [:admin, @design, @new_image], :format => :json do |form|
+    = form.input :sort_by
+    = form.input :description, :input_html => {:rows => "5", :cols => "30"}
+    = form.input :image, :as => :file
+    = form.input :design_id, :as => :hidden, input_html: {value: @design.id}
+    = form.button :submit
 .clear
 
 = link_to 'Back', admin_designs_path

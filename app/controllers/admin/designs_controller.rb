@@ -6,6 +6,7 @@ class Admin::DesignsController < Admin::AdminController
 
   def show
     @design = Design.find(params[:id])
+    @new_image = Image.new
   end
 
   def new

@@ -6,4 +6,5 @@ class Image < ActiveRecord::Base
   validates_numericality_of :sort_by
 
   scope :sorted, order(:sort_by)
+
 end

@@ -32,7 +32,8 @@ function replace_id(new_id,value){
 }
 
 jQuery(document).ready(function(){
-  jQuery("input[type = file]").change(function() {
+  //reload de image when user select new file to upload
+  jQuery("form[id *= edit_image] input[type = file]").change(function() {
     var divImage = jQuery(this).closest("div.image_design");
     var options = {
       success: function(responseXML){
@@ -41,7 +42,19 @@ jQuery(document).ready(function(){
         divImage.children("a[rel = facebox]").attr("href",response.original);
       }
     };
-
-    jQuery(this).parent().parent().ajaxSubmit(options);
+    jQuery(this).closest("form[id *= edit_image]").ajaxSubmit(options);
   });
+
+  //submit new_image form in admin/designs/show
+  jQuery("form[id = new_image]").live("submit",function() {
+    var options = {
+      success: function(rensponseXML){
+        location.reload();
+      }
+    };
+
+    jQuery(this).ajaxSubmit(options);
+    return false;
+  });
+
 });

@@ -3,8 +3,9 @@ Portfolio::Application.routes.draw do
 
   namespace :admin do
     resources :designs, :except => :edit do
-      resources :images, :only => :update
+      resources :images, :only => [:create, :update]
     end
+    resources :images, :only => :destroy
   end
 
   scope "/:locale" do
