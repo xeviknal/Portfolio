@@ -7,9 +7,9 @@ function add_fields(link, association) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g");
   //jQuery(link).before(content.replace(regexp, new_id));
-  var new_image = jQuery("#new_image").clone();
+  var new_image = jQuery("#image_new").clone();
   new_image.removeAttr("id");
-  jQuery("#new_image").before(new_image);
+  jQuery("#image_new").before(new_image);
 
   //replacing input name id for a newer one.
   new_image.find('input').each(function(index,value){

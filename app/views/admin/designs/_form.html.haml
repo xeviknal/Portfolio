@@ -12,8 +12,14 @@
   .field
     = f.label :description
     = f.text_area :description
-  = f.fields_for :images do |builder|
-    = render "image_fields", :f => builder
+
+  %table
+    %tr
+      %th Order
+      %th Description
+      %th Image
+      = f.fields_for :images do |builder|
+        = render "image_fields", :f => builder, :design => @design
   = link_to_add_fields "Add image", f, :images
   .actions
     = f.submit 'Save'

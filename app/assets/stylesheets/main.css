@@ -21,11 +21,11 @@ ul.hmenu li {
   display: block;
 }
 
-#image {
+.image_design {
   float: left;
-  padding: 10px 70px;
+  padding: 20px 0px;
 }
 
-#new_image {
+#image_new {
   display: none;
 }
