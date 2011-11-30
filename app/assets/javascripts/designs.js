@@ -8,11 +8,27 @@ function add_fields(link, association) {
   var regexp = new RegExp("new_" + association, "g");
   //jQuery(link).before(content.replace(regexp, new_id));
   var new_image = jQuery("#new_image").clone();
-  new_image.attr("id","");
-  jQuery(link).before(new_image);
-  new_image.find('input').removeAttr('disabled');
-  new_image.find('textarea').removeAttr('disabled');
+  new_image.removeAttr("id");
+  jQuery("#new_image").before(new_image);
+
+  //replacing input name id for a newer one.
+  new_image.find('input').each(function(index,value){
+      replace_id(new_id,value);
+    });
+  //replacing also the name id for textareas
+  new_image.find('textarea').each(function(index,value){
+      replace_id(new_id,value);
+    });
   new_image.show();
+}
+
+//change ID for the input in order to make diferent input names.
+function replace_id(new_id,value){
+  var id = jQuery(value).attr("id");
+  var name = jQuery(value).attr("name");
+  jQuery(value).attr("name", name.replace("0",new_id));
+  jQuery(value).attr("id", id.replace("0",new_id));
+  jQuery(value).removeAttr('disabled');
 }
 
 jQuery(document).ready(function(){

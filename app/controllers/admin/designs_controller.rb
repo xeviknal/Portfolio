@@ -18,6 +18,7 @@ class Admin::DesignsController < Admin::AdminController
     if @design.save
       redirect_to( admin_design_path(@design), :notice => 'Design was successfully created.')
     else
+      @design.images.build
       render :action => "new"
     end
   end
