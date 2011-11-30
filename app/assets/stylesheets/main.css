@@ -21,6 +21,11 @@ ul.hmenu li {
   display: block;
 }
 
+#front-design .image_design{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 .image_design {
   float: left;
   padding: 20px 0px;

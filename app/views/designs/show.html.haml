@@ -1,36 +1,37 @@
-%p#notice= notice
+#front-design
+  %p#notice= notice
 
-%h2= @design.title
-%p= @design.description
+  %h2= @design.title
+  %p= @design.description
 
-- @design.images.sorted.each do |img|
-  #image
-    = image_tag img.image
-    %p= img.description
+  - @design.images.sorted.each do |img|
+    .image_design
+      = image_tag img.image
+      %p= img.description
 
-.clear
+  .clear
 
-%fb:like{:href => "http://google.com", :layout => "button_count", :show_faces => "true"}
-#disqus_thread
+  %fb:like{:href => "http://google.com", :layout => "button_count", :show_faces => "true"}
+  #disqus_thread
 
-= link_to 'Back', designs_path
+  = link_to 'Back', designs_path
 
-- content_for :custom_js do
-  :javascript
-    var disqus_shortname = 'disqusdesigns'; // required: replace example with your forum shortname
-    var disqus_url = '#{design_url(@design)}';
-    var disqus_developer = 1;
-    var disqus_identifier =  '#{@design.disqus_identificator}';
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/#{get_fb_locale(I18n.locale)}/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+  - content_for :custom_js do
+    :javascript
+      var disqus_shortname = 'disqusdesigns'; // required: replace example with your forum shortname
+      var disqus_url = '#{design_url(@design)}';
+      var disqus_developer = 1;
+      var disqus_identifier =  '#{@design.disqus_identificator}';
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/#{get_fb_locale(I18n.locale)}/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
