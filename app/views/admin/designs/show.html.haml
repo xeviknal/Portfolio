@@ -12,7 +12,7 @@
     %p= best_in_place img, :description, :path => admin_design_path(@design)
     = simple_form_for [:admin, @design, img ], :html => {:multipart => true}, :format => :json do |f|
       = f.input :image, :as => :file
-    = link_to "remove", [:admin, img], :remote => true, :method => :delete
+    = link_to "remove", [:admin, img], :remote => true,:name => img.id, :confirm => 'Are you sure?', :method => :delete
 
 #new_image_form.image_design{:style => "display:none"}
   = simple_form_for [:admin, @design, @new_image], :format => :json do |form|
