@@ -48,8 +48,9 @@ jQuery(document).ready(function(){
   //submit new_image form in admin/designs/show
   jQuery("form[id = new_image]").live("submit",function() {
     var options = {
-      success: function(rensponseXML){
-        location.reload();
+      success: function(responseXML){
+        jQuery("#new_image_form").before(responseXML);
+        jQuery(document).trigger('close.facebox')
       }
     };
 

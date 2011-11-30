@@ -15,10 +15,10 @@ class Admin::ImagesController < Admin::AdminController
 
   def create
     @image = Image.new(params[:image])
-    if @image.save
-      render json: @image
-    else
-      render json: @image.errors, status: :unprocessable_entity
+    @image.save
+    @design = Design.find(@image.design_id)
+    respond_to do |format|
+      format.html { render :partial => "image", :layout => false }
     end
   end
 
@@ -26,7 +26,7 @@ class Admin::ImagesController < Admin::AdminController
     @image = Image.find(params[:id])
     @image.destroy
     respond_to do |format|
-      format.js { render action: "destroy" }
+      format.js { }
     end
   end
 end

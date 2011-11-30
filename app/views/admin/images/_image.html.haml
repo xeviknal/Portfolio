@@ -1,0 +1,7 @@
+.image_design
+  = link_to @image.image_url, :rel => 'facebox' do
+    = image_tag @image.image_url(:thumb)
+  %p= best_in_place @image, :description, :path => admin_design_path(@design)
+  = simple_form_for [:admin, @design, @image ], :html => {:multipart => true}, :format => :json do |f|
+    = f.input :image, :as => :file
+  = link_to "remove", [:admin, @image], :remote => true,:name => @image.id, :confirm => 'Are you sure?', :method => :delete
