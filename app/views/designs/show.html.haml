@@ -10,14 +10,16 @@
       %p= img.description
 
   .clear
-
-  %fb:like{:href => "http://google.com", :layout => "button_count", :show_faces => "true"}
+  = link_to t("Tweet"), "https://twitter.com/share", :class =>"twitter-share-button", "data-via" => "camalize"
+  %fb:like{:href => request.url, :layout => "button_count", :show_faces => "true"}
   #disqus_thread
 
   = link_to 'Back', designs_path
 
   - content_for :custom_js do
+    = javascript_include_tag "//platform.twitter.com/widgets.js"
     :javascript
+      //disqus
       var disqus_shortname = 'disqusdesigns'; // required: replace example with your forum shortname
       var disqus_url = '#{design_url(@design)}';
       var disqus_developer = 1;
@@ -28,6 +30,7 @@
           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
+      //facebook
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
