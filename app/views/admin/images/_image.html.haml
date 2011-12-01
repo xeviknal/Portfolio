@@ -1,10 +1,10 @@
 .image_design
   = link_to img.image_url, :rel => 'facebox' do
     = image_tag img.image_url(:thumb)
-  %p= best_in_place img, :description, :path => admin_design_path(design)
+  %p= best_in_place img, :description, :path => admin_design_image_path(design,img)
   %p
     = "Posició"
-    = best_in_place img, :sort_by, :path => admin_design_path(design)
+    = best_in_place img, :sort_by, :path => admin_design_image_path(design,img)
   = simple_form_for [:admin, design, img ], :html => {:multipart => true}, :format => :json do |f|
     = f.input :image, :as => :file
   = link_to "remove", [:admin, img], :remote => true, :name => img.id, :confirm => 'Are you sure?', :method => :delete
