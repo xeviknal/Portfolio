@@ -31,9 +31,15 @@ function replace_id(new_id,value){
   jQuery(value).removeAttr('disabled');
 }
 
+//All images for a design are sorted by its atributte "sort_by".
+//This method show the image preservind the order.
+function sort_images(img){
+
+}
+
 jQuery(document).ready(function(){
   //reload de image when user select new file to upload
-  jQuery("form[id *= edit_image] input[type = file]").change(function() {
+  jQuery("form[id *= edit_image] input[type = file]").live("change",function() {
     var divImage = jQuery(this).closest("div.image_design");
     var options = {
       success: function(responseXML){
@@ -50,6 +56,7 @@ jQuery(document).ready(function(){
     var options = {
       success: function(responseXML){
         jQuery("#new_image_form").before(responseXML);
+        jQuery(".best_in_place").best_in_place();
         jQuery(document).trigger('close.facebox')
       }
     };

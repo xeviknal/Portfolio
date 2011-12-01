@@ -18,7 +18,7 @@ class Admin::ImagesController < Admin::AdminController
     @image.save
     @design = Design.find(@image.design_id)
     respond_to do |format|
-      format.html { render :partial => "image", :layout => false }
+      format.html { render :partial => "image", :locals => { :design => @design, :img => @image }, :layout => false }
     end
   end
 
